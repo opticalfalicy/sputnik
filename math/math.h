@@ -3,20 +3,25 @@
 
 #include <xmmintrin.h>
 
+
+/*
+* Four component float vector
+*
+*/
 typedef struct VEC4F {
-	union DATA {
-		struct VEC {
+	union {
+		struct {
 			float x;
 			float y;	
 			float z;
 			float w;
-		} v;
+		};
 		__m128 m;
-	} data;
+	};
 } vec4f;
 
-extern float dot(vec4f v, vec4f u);
-extern vec4f add(vec4f v, vec4f u);
-
+extern float dot(vec4f *v, vec4f *u);
+extern vec4f add(vec4f *v, vec4f *u);
+extern vec4f sub(vec4f *v, vec4f *u);
 
 #endif /* SAGE_MATH_H */

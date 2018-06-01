@@ -1,7 +1,7 @@
 
 # compiler goo
 CC = gcc
-CSTD = std=c99
+CSTD = std=c11
 CFLAGS = -pedantic -Wall
 
 # directory structure
