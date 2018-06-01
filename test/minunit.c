@@ -70,7 +70,7 @@ static char *test_mul_s()
     vec4f a = {.x = 0.0f, .y = 1.0f, .z = 2.0f, .w = 1.0f};
     const float s = 4.0f;
 
-    const vec4f res = vec4f_mul_s(s, &a);
+    const vec4f res = vec4f_mul(s, &a);
 
     mu_assert("x != 0.0", res.x == 0.0f);
     mu_assert("y != 4.0", res.y == 4.0f);

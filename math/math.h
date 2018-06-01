@@ -52,6 +52,9 @@ typedef struct MATRIX4F {
 extern float vec4f_dot(const vec4f *const v, const vec4f *const u);
 extern vec4f vec4f_add(const vec4f *const v, const vec4f *const u);
 extern vec4f vec4f_sub(const vec4f *const v, const vec4f *const u);
+
+#define vec4f_mul(T, V) _Generic((T), const vec4f *const: vec4f_mul_v, float: vec4f_mul_s)(T, V)
+
 extern vec4f vec4f_mul_v(const vec4f *const v, const vec4f *const u);
 extern vec4f vec4f_mul_s(float s, const vec4f *const v);
 
