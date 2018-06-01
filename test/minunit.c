@@ -9,8 +9,8 @@ int tests_run = 0;
 
 static char *test_dot() {
 
-	vec4f a = {0.0f, 1.0f, 2.0f, 1.0f};
-	vec4f b = {1.0f, 4.0f, 2.0f, 1.0f};
+	vec4f a = {.data.v = {0.0f, 1.0f, 2.0f, 1.0f}};
+	vec4f b = {.data.v = {1.0f, 4.0f, 2.0f, 1.0f}};
 
 	const float res = dot(a, b);
 
@@ -18,8 +18,25 @@ static char *test_dot() {
 	return 0;
 }
 
+static char *test_add() {
+
+	vec4f a = {.data.v = {0.0f, 1.0f, 2.0f, 1.0f}};
+	vec4f b = {.data.v = {1.0f, 2.0f, 3.0f, 4.0f}};
+
+	const vec4f res = add(a, b);
+
+	mu_assert("error, add(a, b) != {1.0f, 3.0f, 5.0f, 5.0f}", 
+		res.data.v.x == 1.0f && 
+		res.data.v.y == 3.0f && 
+		res.data.v.z == 5.0f && 
+		res.data.v.w == 5.0f);
+
+	return 0;
+}
+
 static char *all_tests() {
 	mu_run_test(test_dot);
+	mu_run_test(test_add);
 	return 0;
 }
 
