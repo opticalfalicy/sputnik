@@ -80,12 +80,27 @@ static char *test_mul_s()
     return 0;
 }
 
+static char *test_matrix_ctor()
+{
+    matrix4f a = {
+        .v0 = {.x = 0.0f, .y = 1.0f, .z = 2.0f, .w = 3.0f},
+        .v1 = {.x = 0.0f, .y = 1.0f, .z = 2.0f, .w = 3.0f},
+        .v2 = {.x = 0.0f, .y = 1.0f, .z = 2.0f, .w = 3.0f},
+        .v3 = {.x = 0.0f, .y = 1.0f, .z = 2.0f, .w = 3.0f}
+    };
+
+    mu_assert("m15 != 3.0", a.m15 == 3.0f);
+
+    return 0;
+}
+
 static char *all_tests() {
     mu_run_test(test_dot);
     mu_run_test(test_add);
     mu_run_test(test_sub);
     mu_run_test(test_mul_v);
     mu_run_test(test_mul_s);
+    mu_run_test(test_matrix_ctor);
     return 0;
 }
 

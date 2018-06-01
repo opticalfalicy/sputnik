@@ -2,7 +2,7 @@
 # compiler goo
 CC = gcc
 CSTD = std=c11
-CFLAGS = -pedantic -Wall
+CFLAGS = -pedantic -Wall -g
 
 # directory structure
 TEST_DIR = test/
