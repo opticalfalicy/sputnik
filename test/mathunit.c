@@ -87,12 +87,45 @@ char *test_matrix_ctor()
 {
     matrix4f a = {
         .v0 = {.x = 0.0f, .y = 1.0f, .z = 2.0f, .w = 3.0f},
-        .v1 = {.x = 0.0f, .y = 1.0f, .z = 2.0f, .w = 3.0f},
-        .v2 = {.x = 0.0f, .y = 1.0f, .z = 2.0f, .w = 3.0f},
-        .v3 = {.x = 0.0f, .y = 1.0f, .z = 2.0f, .w = 3.0f}
+        .v1 = {.x = 4.0f, .y = 5.0f, .z = 6.0f, .w = 7.0f},
+        .v2 = {.x = 8.0f, .y = 9.0f, .z = 10.0f, .w = 11.0f},
+        .v3 = {.x = 12.0f, .y = 13.0f, .z = 14.0f, .w = 15.0f}
     };
 
-    mu_assert("m15 != 3.0", a.m15 == 3.0f);
+
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.m00 == 0.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.m01 == 1.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.m02 == 2.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.m03 == 3.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.m04 == 4.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.m05 == 5.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.m06 == 6.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.m07 == 7.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.m08 == 8.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.m09 == 9.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.m10 == 10.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.m11 == 11.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.m12 == 12.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.m13 == 13.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.m14 == 14.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.m15 == 15.0f);
+
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.v0.x == 0.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.v0.y == 1.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.v0.z == 2.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.v0.w == 3.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.v1.x == 4.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.v1.y == 5.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.v1.z == 6.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.v1.w == 7.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.v2.x == 8.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.v2.y == 9.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.v2.z == 10.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.v2.w == 11.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.v3.x == 12.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.v3.y == 13.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.v3.z == 14.0f);
+    mu_assert(get_msg("test_matrix_ctor", __LINE__, __FILE__), a.v3.w == 15.0f);
 
     return 0;
 }
