@@ -11,3 +11,6 @@ extern char *test_add(void);
 extern char *test_sub(void);
 extern char *test_dot(void);
 extern char *test_matrix_ctor(void);
+
+extern char *test_slink_add(void);
+

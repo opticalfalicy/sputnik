@@ -9,8 +9,14 @@ TMP_DIR = tmp/
 
 TEST_EXEC = test-runner
 
+structure.o: structure/structure.c structure/structure.h
+	$(CC) $(CFLAGS) structure/structure.c -c -o $(OBJ_DIR)$@
+
 math.o: math/math.c math/math.h
 	$(CC) $(CFLAGS) math/math.c -c -o $(OBJ_DIR)$@
+
+structureunit.o: structure.o test/structureunit.c
+	$(CC) $(CFLAGS) test/structureunit.c -c -o $(OBJ_DIR)$@
 
 mathunit.o: math.o test/mathunit.c
 	$(CC) $(CFLAGS) test/mathunit.c -c -o $(OBJ_DIR)$@
@@ -22,7 +28,7 @@ minunit.o: test/minunit.c test/minunit.h mathunit.o
 setup:
 	mkdir -p $(OBJ_DIR) $(TMP_DIR)
 
-test: setup math.o minunit.o
+test: setup mathunit.o structureunit.o minunit.o
 	$(CC) $(CFLAGS) $(OBJ_DIR)*.o -o $(TMP_DIR)$(TEST_EXEC)
 	$(TMP_DIR)$(TEST_EXEC)
 

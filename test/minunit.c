@@ -14,6 +14,8 @@ static char *all_tests()
     mu_run_test(test_mul_m);
     mu_run_test(test_matrix_ctor);
 
+    mu_run_test(test_slink_add);
+
     return 0;
 }
 
