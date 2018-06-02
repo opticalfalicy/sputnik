@@ -11,8 +11,8 @@ static char *all_tests()
     mu_run_test(test_sub);
     mu_run_test(test_mul_v);
     mu_run_test(test_mul_s);
+    mu_run_test(test_mul_m);
     mu_run_test(test_matrix_ctor);
-
 
     return 0;
 }

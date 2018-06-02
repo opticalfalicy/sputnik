@@ -6,6 +6,7 @@ extern int tests_passed;
 
 extern char *test_mul_v(void);
 extern char *test_mul_s(void);
+extern char *test_mul_m(void);
 extern char *test_add(void);
 extern char *test_sub(void);
 extern char *test_dot(void);

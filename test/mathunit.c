@@ -83,6 +83,26 @@ char *test_mul_s()
     return 0;
 }
 
+char *test_mul_m()
+{
+    vec4f a = {.x = 0.0f, .y = 1.0f, .z = 2.0f, .w = 4.0f};
+    matrix4f b = {
+        .v0 = {.x = 0.0f, .y = 1.0f, .z = 2.0f, .w = 3.0f},
+        .v1 = {.x = 4.0f, .y = 5.0f, .z = 6.0f, .w = 7.0f},
+        .v2 = {.x = 8.0f, .y = 9.0f, .z = 10.0f, .w = 11.0f},
+        .v3 = {.x = 12.0f, .y = 13.0f, .z = 14.0f, .w = 15.0f}
+    };
+
+    const vec4f res = vec4f_mul(&b, &a);
+
+    mu_assert(get_msg("test_mul_m", __LINE__, __FILE__), res.x == 68.0f);
+    mu_assert(get_msg("test_mul_m", __LINE__, __FILE__), res.y == 75.0f);
+    mu_assert(get_msg("test_mul_m", __LINE__, __FILE__), res.z == 82.0f);
+    mu_assert(get_msg("test_mul_m", __LINE__, __FILE__), res.w == 89.0f);
+
+    return 0;
+}
+
 char *test_matrix_ctor()
 {
     matrix4f a = {
@@ -129,4 +149,3 @@ char *test_matrix_ctor()
 
     return 0;
 }
-
