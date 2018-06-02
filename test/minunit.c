@@ -2,11 +2,9 @@
 #include "minunit.h"
 
 int tests_passed = 0;
-int tests_failed = 0;
 
 static char *all_tests() 
 {
-
 
     mu_run_test(test_dot);
     mu_run_test(test_add);
@@ -28,9 +26,7 @@ int main(int argc, char **argv)
         printf("FAILURE: %s\n\n\n", result);
     }
 
-    printf("passed: %d\n", tests_passed);
-    printf("failed: %d\n", tests_failed);
-    printf("total: %d\n", tests_passed + tests_failed);
+    printf("passed: %d\n\n\n", tests_passed);
 
     return result != 0;
 }
