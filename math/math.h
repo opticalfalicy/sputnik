@@ -1,5 +1,5 @@
-#ifndef SAGE_MATH_H
-#define SAGE_MATH_H
+#ifndef _SPUTNIK_MATH_H
+#define _SPUTNIK_MATH_H
 
 #include <xmmintrin.h>
 
@@ -53,9 +53,9 @@ extern float vec4f_dot(const vec4f *const v, const vec4f *const u);
 extern vec4f vec4f_add(const vec4f *const v, const vec4f *const u);
 extern vec4f vec4f_sub(const vec4f *const v, const vec4f *const u);
 
-#define vec4f_mul(T, V) _Generic((T), const vec4f *const: vec4f_mul_v, float: vec4f_mul_s)(T, V)
+#define vec4f_mul(T, V) _Generic((T), struct VEC4F *: __vec4f_mul_v, float: __vec4f_mul_s)(T, V)
+extern vec4f __vec4f_mul_v(const vec4f *const v, const vec4f *const u);
+extern vec4f __vec4f_mul_s(float s, const vec4f *const v);
 
-extern vec4f vec4f_mul_v(const vec4f *const v, const vec4f *const u);
-extern vec4f vec4f_mul_s(float s, const vec4f *const v);
 
-#endif /* SAGE_MATH_H */
+#endif /* _SPUTNIK_MATH_H */

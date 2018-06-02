@@ -55,7 +55,7 @@ static char *test_mul_v()
     vec4f a = {.x = 0.0f, .y = 1.0f, .z = 2.0f, .w = 1.0f};
     vec4f b = {.x = 1.0f, .y = 2.0f, .z = 4.0f, .w = -4.0f};
 
-    const vec4f res = vec4f_mul_v(&a, &b);
+    const vec4f res = vec4f_mul(&a, &b);
 
     mu_assert("x != 0.0", res.x == 0.0f);
     mu_assert("y != 2.0", res.y == 2.0f);

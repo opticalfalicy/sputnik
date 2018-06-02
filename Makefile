@@ -17,7 +17,7 @@ minunit.o: test/minunit.c test/minunit.h
 setup:
 	mkdir -p $(OBJ_DIR)
 
-test: math.o minunit.o setup
+test: setup math.o minunit.o
 	$(CC) $(CFLAGS) $(OBJ_DIR)*.o -o test-runner
 
 clean:
